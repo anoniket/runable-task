@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost:5173';
 app.use(
   cors({
-    origin: corsOrigin.split(','),
+    origin: corsOrigin === '*' ? true : corsOrigin.split(','),
     credentials: true,
   })
 );
